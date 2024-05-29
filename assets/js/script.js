@@ -50,10 +50,10 @@ function displayCountry () {
 function answerQuestion(playerChoice) {
     questionResult = document.getElementById('player-choice');
     if (playerChoice === currentCountry ) {
-        questionResult.innerHTML = `You chose ${playerChoice} that's correct`;
+        questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-check"></i>`;
         ++playerScore;
     } else {
-        questionResult.innerHTML = `You chose ${playerChoice} that's wrong`;
+        questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-xmark"></i>`;
     }
     let myScore = document.getElementById('score');
     myScore.innerHTML = `Your score is ${playerScore}`;
