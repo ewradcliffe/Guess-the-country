@@ -30,7 +30,14 @@ body {
     border-radius: 20px;
 }
 
-/*Footer*/
- footer {
-    position: sticky;
+/*Footer
+ #score {
+    position: fixed;
+    background: rgb(148, 148, 255);
+    width: 100%;
+    font-size: 150%;
  }
+
+ #score {
+    font-size: 150%;
+ }*/

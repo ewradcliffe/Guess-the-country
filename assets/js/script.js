@@ -51,13 +51,16 @@ function answerQuestion(playerChoice) {
     questionResult = document.getElementById('player-choice');
     if (playerChoice === currentCountry ) {
         questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-check"></i>`;
+        questionResult.style.color = 'green';
         ++playerScore;
     } else {
         questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-xmark"></i>`;
+        questionResult.style.color = 'red';
     }
     let myScore = document.getElementById('score');
     myScore.innerHTML = `Your score is ${playerScore}`;
 }
+
 
 let askMeAQuestion = document.getElementById('show-me-a-country');
 askMeAQuestion.addEventListener('click', displayCountry);
