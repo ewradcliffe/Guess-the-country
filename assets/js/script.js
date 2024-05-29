@@ -11,14 +11,13 @@ let currentCountry;
 }
 
 /*Function to display country map */
-
 function displayCountry () {
     randomiseCountry();
-    currentCountry = randomCountry.toLowerCase();
+    currentCountry = randomCountry;
     console.log(currentCountry);
     /*Displays the Map Silhouette*/
     let showMap = document.getElementById('country-map');
-    showMap.innerHTML = `<img src = "assets/images/${currentCountry}.png" alt = "Silhouette of country.">`;
+    showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
 
 }
 
