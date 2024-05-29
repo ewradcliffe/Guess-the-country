@@ -31,11 +31,9 @@ function displayCountry () {
             countryButtons.push(newCountry);
         }
     }    
-    console.log(currentCountry);
 
     /*Add current country at a random location*/
     countryButtons.splice([Math.floor(Math.random()*countryButtons.length)], 0, currentCountry);
-    console.log(countryButtons);
 
     /*Display buttons to user*/
     let buttonArea = document.createElement('div');
