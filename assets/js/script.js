@@ -21,7 +21,16 @@ function displayCountry () {
     
     /*To get buttons*/
     /*Generates three more random countries*/
-    countryButtons = [randomiseCountry(), randomiseCountry(), randomiseCountry()];
+    let countryButtons = [];
+    while (countryButtons.length < 3) {
+        randomiseCountry()
+        newCountry = randomCountry;
+        if (countryButtons.includes(newCountry) || newCountry === currentCountry ) {
+            continue
+        } else {
+            countryButtons.push(newCountry);
+        }
+    }    
     console.log(currentCountry);
 
     /*Add current country at a random location*/
