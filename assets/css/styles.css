@@ -9,6 +9,15 @@ body {
     text-align: center;
 }
 
+#show-me-a-country {
+    font-size: 150%;
+    width: 200px;
+    padding: 2%;
+    margin: 2%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
 /*Answer Buttons*/
 .answer-button {
     font-size: 150%;
@@ -18,5 +27,5 @@ body {
     background: rgb(148, 148, 255);
     border: 2px solid black;
     border-radius: 20px;
-    border: ;
 }
+

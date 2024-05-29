@@ -59,5 +59,5 @@ function answerQuestion(playerChoice) {
     myScore.innerHTML = `Your score is ${playerScore}`;
 }
 
-let askMeAQuestion = document.getElementById('show-me-a-country!');
+let askMeAQuestion = document.getElementById('show-me-a-country');
 askMeAQuestion.addEventListener('click', displayCountry);
