@@ -36,9 +36,16 @@ function displayCountry () {
     /*Add current country at a random location*/
     countryButtons.splice([Math.floor(Math.random()*countryButtons.length)], 0, currentCountry);
     console.log(countryButtons);
+
+    /*Display buttons to user*/
+    let buttonArea = document.createElement('div');
+    for (choice in countryButtons) {
+        let questionChoice = document.createElement('div');
+        questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
+        buttonArea.appendChild(questionChoice);
+    }
+    showMap.appendChild(buttonArea);
 }
-
-
 
 let askMeAQuestion = document.getElementById('show-me-a-country!');
 askMeAQuestion.addEventListener('click', displayCountry);
