@@ -1,6 +1,7 @@
 /*list of countries to choose from*/
 const countries = ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Denmark', 'France', 'Germany', 'Greece', 'Greenland', 'Hungary', 'India', 'Indonesia', 'Italy', 'Ireland', 'Japan', 'Jordan', 'Kosovo', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malaysia', 'Mexico', 'Mongolia', 'Mozambique', 'Myanmar', 'Nepal', 'Netherlands', 'Norway', 'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Singapore', 'Slovenia', 'Somalia', 'Spain', 'Sudan', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Ukraine', 'Uganda', 'USA', 'UK', 'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe'];
 let currentCountry;
+let playerScore = 0;
 
 
 /**Function to randomly generate a country 
@@ -43,6 +44,19 @@ function displayCountry () {
         buttonArea.appendChild(questionChoice);
     }
     showMap.appendChild(buttonArea);
+}
+
+/*Function to check answer*/
+function answerQuestion(playerChoice) {
+    questionResult = document.getElementById('player-choice');
+    if (playerChoice === currentCountry ) {
+        questionResult.innerHTML = `You chose ${playerChoice} that's correct`;
+        ++playerScore;
+    } else {
+        questionResult.innerHTML = `You chose ${playerChoice} that's wrong`;
+    }
+    let myScore = document.getElementById('score');
+    myScore.innerHTML = `Your score is ${playerScore}`;
 }
 
 let askMeAQuestion = document.getElementById('show-me-a-country!');
