@@ -4,6 +4,7 @@ let previousCountry = [];
 let currentCountry;
 let questionNumber = 1;
 let playerScore = 0;
+let bonusPointScore = 0;
 
 
 /**Function to randomly generate a country 
@@ -19,8 +20,8 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
-
 }
+
 /*Function to display country map */
 function displayCountry () {
     /*Calls Question number function*/
@@ -65,6 +66,23 @@ function displayCountry () {
 }
 
 
+/*Function to add bonus points */
+function bonusPoints(bonus) {
+    if (bonus === 'yes') {
+        ++bonusPointScore;
+    } else {
+        bonusPointScore = 0;
+    }
+    
+     if (bonusPointScore < 5) {
+        console.log('you got this far', bonusPointScore);
+    } else {
+        playerScore += 3;
+        console.log('you got bonus points', bonusPointScore);
+        bonusPointScore = 0;
+    } 
+}
+
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
     questionResult = document.getElementById('country-map');
@@ -72,9 +90,11 @@ function answerQuestion(playerChoice) {
         questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-check"></i>`;
         questionResult.style.color = 'green';
         ++playerScore;
+        bonusPoints('yes'); 
     } else {
         questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-xmark"></i>`;
         questionResult.style.color = 'red';
+        bonusPoints('no');
     }
     let myScore = document.getElementById('score');
     myScore.innerHTML = `Your score is ${playerScore}`;
