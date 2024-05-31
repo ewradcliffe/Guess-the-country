@@ -1,6 +1,7 @@
 /*list of countries to choose from*/
 const countries = ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Denmark', 'France', 'Germany', 'Greece', 'Greenland', 'Hungary', 'India', 'Indonesia', 'Italy', 'Ireland', 'Japan', 'Jordan', 'Kosovo', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malaysia', 'Mexico', 'Mongolia', 'Mozambique', 'Myanmar', 'Nepal', 'Netherlands', 'Norway', 'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Singapore', 'Slovenia', 'Somalia', 'Spain', 'Sudan', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Ukraine', 'Uganda', 'USA', 'UK', 'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe'];
 let currentCountry;
+let questionNumber = 1;
 let playerScore = 0;
 
 
@@ -12,8 +13,18 @@ let playerScore = 0;
     return randomCountry;    
 }
 
+/*Function to track question number*/
+function questionNumTrack() {
+    qNum = document.getElementById('question-number');
+    qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
+    ++questionNumber;
+
+}
 /*Function to display country map */
 function displayCountry () {
+    /*Calls Quuestion number function*/
+    questionNumTrack()
+    /*Randomly selects a country*/
     randomiseCountry();
     currentCountry = randomCountry;
     /*Displays the Map Silhouette*/
@@ -45,6 +56,7 @@ function displayCountry () {
     }
     showMap.appendChild(buttonArea);
 }
+
 
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
