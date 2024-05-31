@@ -20,6 +20,10 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
+    /*Ends after 20 goes*/
+    if (questionNumber > 20) {
+        qNum.innerHTML = `<h2>Game over!</h2><p>You got ${playerScore} points!</p>`
+    }
 }
 
 /*Function to display country map */
@@ -64,7 +68,6 @@ function displayCountry () {
     }
     showMap.appendChild(buttonArea);
 }
-
 
 /*Function to add bonus points */
 function bonusPoints(bonus) {
