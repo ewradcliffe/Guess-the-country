@@ -48,7 +48,7 @@ function displayCountry () {
 
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
-    questionResult = document.getElementById('player-choice');
+    questionResult = document.getElementById('country-map');
     if (playerChoice === currentCountry ) {
         questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-check"></i>`;
         questionResult.style.color = 'green';
