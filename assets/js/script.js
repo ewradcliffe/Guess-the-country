@@ -1,5 +1,6 @@
 /*list of countries to choose from*/
 const countries = ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Denmark', 'France', 'Germany', 'Greece', 'Greenland', 'Hungary', 'India', 'Indonesia', 'Italy', 'Ireland', 'Japan', 'Jordan', 'Kosovo', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malaysia', 'Mexico', 'Mongolia', 'Mozambique', 'Myanmar', 'Nepal', 'Netherlands', 'Norway', 'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Singapore', 'Slovenia', 'Somalia', 'Spain', 'Sudan', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Ukraine', 'Uganda', 'USA', 'UK', 'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe'];
+let previousCountry = [];
 let currentCountry;
 let questionNumber = 1;
 let playerScore = 0;
@@ -22,11 +23,19 @@ function questionNumTrack() {
 }
 /*Function to display country map */
 function displayCountry () {
-    /*Calls Quuestion number function*/
+    /*Calls Question number function*/
     questionNumTrack()
     /*Randomly selects a country*/
-    randomiseCountry();
-    currentCountry = randomCountry;
+    currentCountry = randomiseCountry();
+    console.log(previousCountry);
+   
+    /*Checks country hasn't been selected already*/
+    while (previousCountry.includes(currentCountry)) {
+        currentCountry = randomiseCountry();
+        console.log('The damn thing worked!!');
+    } 
+    previousCountry.push(currentCountry);
+
     /*Displays the Map Silhouette*/
     let showMap = document.getElementById('country-map');
     showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
