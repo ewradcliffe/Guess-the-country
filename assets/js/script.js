@@ -75,11 +75,12 @@ function bonusPoints(bonus) {
     }
     
      if (bonusPointScore < 5) {
-        console.log('you got this far', bonusPointScore);
+        /*nothing happens while bonusPointScore is less than 5 */
     } else {
         playerScore += 3;
-        console.log('you got bonus points', bonusPointScore);
         bonusPointScore = 0;
+        bonusDisplay = document.getElementById('country-map');
+        bonusDisplay.innerHTML = `<i class="fa-solid fa-check"></i> <pid = "bonus-points">Five in a row.\nYou get bonus points!!\nGreat effort!!</p>`;
     } 
 }
 

@@ -45,6 +45,11 @@ body {
     font-size: 300%;
  }
 
+#bonus-points {
+    color: green;
+    font-size: 250%
+}
+
 /*Footer*/
  footer {
    position: sticky;
