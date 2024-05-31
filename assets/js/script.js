@@ -27,12 +27,10 @@ function displayCountry () {
     questionNumTrack()
     /*Randomly selects a country*/
     currentCountry = randomiseCountry();
-    console.log(previousCountry);
    
     /*Checks country hasn't been selected already*/
     while (previousCountry.includes(currentCountry)) {
         currentCountry = randomiseCountry();
-        console.log('The damn thing worked!!');
     } 
     previousCountry.push(currentCountry);
 
