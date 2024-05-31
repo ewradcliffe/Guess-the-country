@@ -20,10 +20,6 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
-    /*Ends after 20 goes*/
-    if (questionNumber > 20) {
-        qNum.innerHTML = `<h2>Game over!</h2><p>You got ${playerScore} points!</p>`
-    }
 }
 
 /*Function to display country map */
@@ -87,6 +83,20 @@ function bonusPoints(bonus) {
     } 
 }
 
+
+/*Function to check game length. Ends after 20 goes*/
+function checkGameLength() {
+    if (questionNumber > 20) {
+        qNum.innerHTML = `<h2>Game over!</h2><p>You got ${playerScore} points!</p>`
+        /*Resets scores and variables.*/
+        previousCountry = [];
+        currentCountry;
+        questionNumber = 1;
+        playerScore = 0;
+        bonusPointScore = 0;
+    }
+}
+
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
     questionResult = document.getElementById('country-map');
@@ -102,8 +112,10 @@ function answerQuestion(playerChoice) {
     }
     let myScore = document.getElementById('score');
     myScore.innerHTML = `Your score is ${playerScore}`;
+    /*Function which checks if 20 turns taken.*/
+    checkGameLength()
 }
 
-
+/*Event Listener to display map and option buttons*/
 let askMeAQuestion = document.getElementById('show-me-a-country');
 askMeAQuestion.addEventListener('click', displayCountry);
