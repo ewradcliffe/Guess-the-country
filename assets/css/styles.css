@@ -14,6 +14,27 @@ body {
     text-align: center;
 }
 
+/*Header and rules*/
+header {
+    border-bottom: 2px solid blue;
+}
+
+header > h1 {
+    margin: 0%;
+    padding: 2%;
+    color: white;
+    background: blue;
+}
+
+header > ul {
+    padding: 0;
+}
+
+header > ul > li {
+    list-style-type: none;
+    padding: 2%;
+}
+
 /*Show me a country button*/
 #show-me-a-country {
     font-size: 150%;
