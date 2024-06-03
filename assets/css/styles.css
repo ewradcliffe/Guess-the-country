@@ -88,3 +88,8 @@ header > ul > li {
     font-size: 150%
 }
 
+/*Game over message*/
+.game-over {
+    color: blue;
+    font-size: 200%;
+}
