@@ -93,3 +93,15 @@ header > ul > li {
     color: blue;
     font-size: 200%;
 }
+
+/* Media Queries*/
+/*Tablets and up (768px+)*/
+@media screen and (min-width: 768px) {
+    #country-map > div {
+        columns: 2; 
+    }
+
+    .answer-button{
+        margin: 5%;       
+    }
+}
