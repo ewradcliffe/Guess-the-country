@@ -24,7 +24,7 @@ function questionNumTrack() {
 
 /*Function to change text of "let's play" button*/
 function changeButton() {
-    changeButtonText = document.getElementById('show-me-a-country');
+    let changeButtonText = document.getElementById('show-me-a-country');
     changeButtonText.innerHTML = "Show me another country!";
 }
 
@@ -97,15 +97,17 @@ function checkGameLength() {
         /*Resets scores and variables & game button text.*/
         changeButtonText = document.getElementById('show-me-a-country');
         changeButtonText.innerHTML = "Let's play!";
+        playerScore = 0;
+        let myScore = document.getElementById('score');
+        myScore.innerHTML = ``;
         previousCountry = [];
         currentCountry;
         questionNumber = 1;
-        playerScore = 0;
         bonusPointScore = 0;
     }
 }
 
-/*Function to check answer*/
+/*Function to check answer & increment score*/
 function answerQuestion(playerChoice) {
     questionResult = document.getElementById('country-map');
     if (playerChoice === currentCountry ) {
@@ -119,7 +121,7 @@ function answerQuestion(playerChoice) {
         bonusPoints('no');
     }
     let myScore = document.getElementById('score');
-    myScore.innerHTML = `score: ${playerScore}`;
+    myScore.innerHTML = `${playerScore}`;
     /*Function which checks if 20 turns taken.*/
     checkGameLength()
 }
