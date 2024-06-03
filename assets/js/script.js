@@ -94,7 +94,9 @@ function bonusPoints(bonus) {
 function checkGameLength() {
     if (questionNumber > 20) {
         qNum.innerHTML = `<h2>Game over!</h2><p>You got ${playerScore} points!</p>`
-        /*Resets scores and variables.*/
+        /*Resets scores and variables & game button text.*/
+        changeButtonText = document.getElementById('show-me-a-country');
+        changeButtonText.innerHTML = "Let's play!";
         previousCountry = [];
         currentCountry;
         questionNumber = 1;
@@ -102,8 +104,6 @@ function checkGameLength() {
         bonusPointScore = 0;
     }
 }
-
-
 
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
