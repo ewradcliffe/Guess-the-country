@@ -48,6 +48,7 @@ header > ul > li {
     border: 2px solid blue;
     margin-left: 5%;
 }
+
 /*Show me a country button*/
 #show-me-a-country {
     font-size: 150%;
@@ -69,18 +70,21 @@ header > ul > li {
     border-radius: 20px;
 }
 
+/*display's country player selected*/
  #player-choice {
-    font-size: 400%;
+    font-size: 200%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
  }
 
+/*Tick and cross icons*/
  .fa-solid {
     font-size: 300%;
  }
 
+ /*Text which appears when bonus points awarded*/
 #bonus-points {
     color: green;
-    font-size: 250%
+    font-size: 150%
 }
 

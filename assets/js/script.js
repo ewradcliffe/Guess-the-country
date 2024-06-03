@@ -86,7 +86,7 @@ function bonusPoints(bonus) {
         playerScore += 3;
         bonusPointScore = 0;
         bonusDisplay = document.getElementById('country-map');
-        bonusDisplay.innerHTML = `<i class="fa-solid fa-check"></i> <pid = "bonus-points">Five in a row.\nYou get bonus points!!\nGreat effort!!</p>`;
+        bonusDisplay.innerHTML = `<i class="fa-solid fa-check"></i> <p id = "bonus-points">Five in a row.\nYou get bonus points!!\nGreat effort!!</p>`;
     } 
 }
 
@@ -111,12 +111,12 @@ function checkGameLength() {
 function answerQuestion(playerChoice) {
     questionResult = document.getElementById('country-map');
     if (playerChoice === currentCountry ) {
-        questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-check"></i>`;
+        questionResult.innerHTML = `<p id = "player-choice">${playerChoice}</p><i class="fa-solid fa-check"></i>`;
         questionResult.style.color = 'green';
         ++playerScore;
         bonusPoints('yes'); 
     } else {
-        questionResult.innerHTML = `${playerChoice} <i class="fa-solid fa-xmark"></i>`;
+        questionResult.innerHTML = `<p id = "player-choice">${playerChoice}</p><i class="fa-solid fa-xmark"></i>`;
         questionResult.style.color = 'red';
         bonusPoints('no');
     }
