@@ -119,7 +119,7 @@ function answerQuestion(playerChoice) {
         bonusPoints('no');
     }
     let myScore = document.getElementById('score');
-    myScore.innerHTML = `Your score is ${playerScore}`;
+    myScore.innerHTML = `score: ${playerScore}`;
     /*Function which checks if 20 turns taken.*/
     checkGameLength()
 }
