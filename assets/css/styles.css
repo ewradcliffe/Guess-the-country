@@ -97,11 +97,36 @@ header > ul > li {
 /* Media Queries*/
 /*Tablets and up (768px+)*/
 @media screen and (min-width: 768px) {
+    /*Rules*/
+    header > ul > li {
+        font-size: 150%;
+        padding: 1%;
+    }
+
+    /*Question number*/
+    #question-number {
+        font-size: 150%;
+    }
+    
+    /*Buttons*/
     #country-map > div {
         columns: 2; 
     }
 
     .answer-button{
         margin: 5%;       
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    /*Rules*/
+    header > ul > li {
+        padding: 0.5%;
+    }
+
+    /*Buttons*/
+    #country-map > div {
+        columns: 4; 
     }
 }
