@@ -22,10 +22,17 @@ function questionNumTrack() {
     ++questionNumber;
 }
 
+/*Function to change text of "let's play" button*/
+function changeButton() {
+    changeButtonText = document.getElementById('show-me-a-country');
+    changeButtonText.innerHTML = "Show me another country!";
+}
+
 /*Function to display country map */
 function displayCountry () {
-    /*Calls Question number function*/
+    /*Calls Question number & change button text function*/
     questionNumTrack()
+    changeButton()
     /*Randomly selects a country*/
     currentCountry = randomiseCountry();
    
@@ -83,7 +90,6 @@ function bonusPoints(bonus) {
     } 
 }
 
-
 /*Function to check game length. Ends after 20 goes*/
 function checkGameLength() {
     if (questionNumber > 20) {
@@ -96,6 +102,8 @@ function checkGameLength() {
         bonusPointScore = 0;
     }
 }
+
+
 
 /*Function to check answer*/
 function answerQuestion(playerChoice) {
