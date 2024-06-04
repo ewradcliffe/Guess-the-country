@@ -21,11 +21,22 @@ function questionNumTrack() {
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
 }
-
+/*Function to collapse rules*/
+function collapseRules(buttonText) {
+    let hideRules = document.getElementById('rules');
+    if (buttonText === "Show me another country!") {
+        hideRules.style.display = "none"
+        console.log('none');
+    } else {
+        hideRules.style.display = "block"
+        console.log('block');
+    }
+}
 /*Function to change text of "let's play" button*/
 function changeButton() {
     let changeButtonText = document.getElementById('show-me-a-country');
     changeButtonText.innerHTML = "Show me another country!";
+    collapseRules("Show me another country!")
 }
 
 /*Function to randomise and display buttons*/
@@ -35,7 +46,6 @@ function displayButtons(currentCountry) {
     let countryButtons = [];
     while (countryButtons.length < 3) {
         newCountry = randomiseCountry()
-        console.log(newCountry);
         if (countryButtons.includes(newCountry) || newCountry === currentCountry ) {
             continue
         } else {
@@ -101,6 +111,7 @@ function checkGameLength() {
         /*Resets scores and variables & game button text.*/
         changeButtonText = document.getElementById('show-me-a-country');
         changeButtonText.innerHTML = "Let's play!";
+        collapseRules("Let's play!")
         playerScore = 0;
         let myScore = document.getElementById('score');
         myScore.innerHTML = ``;
@@ -133,3 +144,5 @@ function answerQuestion(playerChoice) {
 /*Event Listener to display map and option buttons*/
 let askMeAQuestion = document.getElementById('show-me-a-country');
 askMeAQuestion.addEventListener('click', displayCountry);
+
+
