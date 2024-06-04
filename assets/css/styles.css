@@ -42,21 +42,29 @@ header > ul > li {
     font-size: 200%;
 }
 
+#score-area > p {
+    margin: 2%;
+}
+
 #score {
     width: 40px;
     height: 40px;
     border: 2px solid blue;
-    margin-left: 5%;
 }
 
 /*Show me a country button*/
 #show-me-a-country {
     font-size: 150%;
-    width: 200px;
+    max-width: fit-content;
     padding: 2%;
     margin: 2%;
     border: 2px solid black;
     border-radius: 20px;
+}
+
+/*Question count area*/
+#question-number > h2 {
+    margin: 2%;
 }
 
 /*Answer Buttons*/
