@@ -128,9 +128,15 @@ header > ul > li {
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    /*Rules*/
+
     header > ul > li {
         padding: 0.5%;
+    }
+
+    /*Question count area*/
+    #question-number > h2 {
+        margin: 0%;
+        font-size: 100%;
     }
 
     /*Buttons*/
