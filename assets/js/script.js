@@ -54,7 +54,9 @@ function displayButtons(currentCountry) {
     /*Add current country at a random location*/
     countryButtons.splice([Math.floor(Math.random()*countryButtons.length)], 0, currentCountry);
 
-    /*Display buttons to user*/
+    /**Display buttons to user 
+    * onclick code from https://www.geeksforgeeks.org/how-to-get-the-id-of-the-clicked-button-using-javascript-jquery/
+    */
     let buttonArea = document.createElement('div');
     for (choice in countryButtons) {
         let questionChoice = document.createElement('div');
