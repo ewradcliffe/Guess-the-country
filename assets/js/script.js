@@ -26,10 +26,8 @@ function collapseRules(buttonText) {
     let hideRules = document.getElementById('rules');
     if (buttonText === "Show me another country!") {
         hideRules.style.display = "none"
-        console.log('none');
     } else {
         hideRules.style.display = "block"
-        console.log('block');
     }
 }
 /*Function to change text of "let's play" button*/
