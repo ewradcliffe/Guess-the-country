@@ -86,9 +86,7 @@ function bonusPoints(bonus) {
         bonusPointScore = 0;
     }
     
-     if (bonusPointScore < 5) {
-        /*nothing happens while bonusPointScore is less than 5 */
-    } else {
+     if (bonusPointScore === 5) {
         playerScore += 3;
         bonusPointScore = 0;
         bonusDisplay = document.getElementById('country-map');
