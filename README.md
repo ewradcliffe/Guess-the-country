@@ -35,6 +35,7 @@ The link to website is https://ewradcliffe.github.io/Guess-the-country/
 Please note that to save any changes, please save as usual, then 'git add .' followed by 'git commit -m "summerise changes." followed by 'git push' to push changes to github.
 
 ## Credits
+Random number selector taken from https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/
 Fonts from https://fonts.google.com/
 Tick and cross from https://fontawesome.com/
 Country sillouttes from https://silhouettegarden.com/category/country/
