@@ -28,6 +28,35 @@ function changeButton() {
     changeButtonText.innerHTML = "Show me another country!";
 }
 
+/*Function to randomise and display buttons*/
+function displayButtons(currentCountry) {
+        /*To get buttons*/
+    /*Generates three more random countries*/
+    let countryButtons = [];
+    while (countryButtons.length < 3) {
+        newCountry = randomiseCountry()
+        console.log(newCountry);
+        if (countryButtons.includes(newCountry) || newCountry === currentCountry ) {
+            continue
+        } else {
+            countryButtons.push(newCountry);
+        }
+    }    
+
+    /*Add current country at a random location*/
+    countryButtons.splice([Math.floor(Math.random()*countryButtons.length)], 0, currentCountry);
+
+    /*Display buttons to user*/
+    let buttonArea = document.createElement('div');
+    for (choice in countryButtons) {
+        let questionChoice = document.createElement('div');
+        questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
+        buttonArea.appendChild(questionChoice);
+    }
+    let showMap = document.getElementById('country-map');
+    showMap.appendChild(buttonArea);
+}
+
 /*Function to display country map */
 function displayCountry () {
     /*Calls Question number & change button text function*/
@@ -46,30 +75,7 @@ function displayCountry () {
     let showMap = document.getElementById('country-map');
     showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
     
-    /*To get buttons*/
-    /*Generates three more random countries*/
-    let countryButtons = [];
-    while (countryButtons.length < 3) {
-        randomiseCountry()
-        newCountry = randomCountry;
-        if (countryButtons.includes(newCountry) || newCountry === currentCountry ) {
-            continue
-        } else {
-            countryButtons.push(newCountry);
-        }
-    }    
-
-    /*Add current country at a random location*/
-    countryButtons.splice([Math.floor(Math.random()*countryButtons.length)], 0, currentCountry);
-
-    /*Display buttons to user*/
-    let buttonArea = document.createElement('div');
-    for (choice in countryButtons) {
-        let questionChoice = document.createElement('div');
-        questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
-        buttonArea.appendChild(questionChoice);
-    }
-    showMap.appendChild(buttonArea);
+    displayButtons(currentCountry)
 }
 
 /*Function to add bonus points */
