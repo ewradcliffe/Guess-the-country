@@ -91,7 +91,7 @@ function displayCountry() {
 
 /*Function to add bonus points */
 function bonusPoints(bonus) {
-    if (bonus === 'yes') {
+    if (bonus) {
         ++bonusPointScore;
     } else {
         bonusPointScore = 0;
@@ -130,11 +130,11 @@ function answerQuestion(playerChoice) {
         questionResult.innerHTML = `<p id = "player-choice">${playerChoice}</p><i class="fa-solid fa-check"></i>`;
         questionResult.style.color = 'green';
         ++playerScore;
-        bonusPoints('yes');
+        bonusPoints(true);
     } else {
         questionResult.innerHTML = `<p id = "player-choice">${playerChoice}</p><i class="fa-solid fa-xmark"></i>`;
         questionResult.style.color = 'red';
-        bonusPoints('no');
+        bonusPoints(false);
     }
     let myScore = document.getElementById('score');
     myScore.innerHTML = `${playerScore}`;
