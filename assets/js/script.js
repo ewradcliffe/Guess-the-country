@@ -7,6 +7,25 @@ let questionNumber = 1;
 let playerScore = 0;
 let bonusPointScore = 0;
 
+/*Function to check game length. Ends after 20 goes*/
+function checkGameLength() {
+    if (questionNumber > 20) {
+        qNum.innerHTML = `<h2 class = "game-over">Game over!</h2><p class = "game-over">You got ${playerScore} points!</p>`
+        /*Resets scores and variables & game button text.*/
+        let changeButtonText = document.getElementById('show-me-a-country');
+        changeButtonText.innerHTML = "Let's play!";
+        collapseRules("Let's play!")
+        let hideMap = document.getElementById('country-map');
+        hideMap.innerHTML = ``;
+        playerScore = 0;
+        let myScore = document.getElementById('score');
+        myScore.innerHTML = ``;
+        previousCountry = [];
+        currentCountry;
+        questionNumber = 1;
+        bonusPointScore = 0;
+    }
+}
 
 /**Function to randomly generate a country 
  * (random selector taken from https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/)
@@ -21,11 +40,10 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
-    /*Prevent show me another question being used to take more than 20 turns.*/
-    if (questionNumber > 21) {
-        checkGameLength()
-    }
+    console.log(`question number ${questionNumber}`);
+
 }
+
 /*Function to collapse rules*/
 function collapseRules(buttonText) {
     let hideRules = document.getElementById('rules');
@@ -74,23 +92,27 @@ function displayButtons(currentCountry) {
 
 /*Function to display country map */
 function displayCountry() {
-    /*Calls Question number & change button text function*/
-    questionNumTrack()
-    changeButton()
-    /*Randomly selects a country*/
-    currentCountry = randomiseCountry();
-
-    /*Checks country hasn't been selected already*/
-    while (previousCountry.includes(currentCountry)) {
+    if (questionNumber > 20) {
+        checkGameLength()
+    } else {
+        /*Calls Question number & change button text function*/
+        questionNumTrack()
+        changeButton()
+        /*Randomly selects a country*/
         currentCountry = randomiseCountry();
+
+        /*Checks country hasn't been selected already*/
+        while (previousCountry.includes(currentCountry)) {
+            currentCountry = randomiseCountry();
+        }
+        previousCountry.push(currentCountry);
+
+        /*Displays the Map Silhouette*/
+        let showMap = document.getElementById('country-map');
+        showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
+
+        displayButtons(currentCountry);
     }
-    previousCountry.push(currentCountry);
-
-    /*Displays the Map Silhouette*/
-    let showMap = document.getElementById('country-map');
-    showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
-
-    displayButtons(currentCountry);
 }
 
 /*Function to add bonus points */
@@ -109,23 +131,6 @@ function bonusPoints(bonus) {
     }
 }
 
-/*Function to check game length. Ends after 20 goes*/
-function checkGameLength() {
-    if (questionNumber > 20) {
-        qNum.innerHTML = `<h2 class = "game-over">Game over!</h2><p class = "game-over">You got ${playerScore} points!</p>`
-        /*Resets scores and variables & game button text.*/
-        let changeButtonText = document.getElementById('show-me-a-country');
-        changeButtonText.innerHTML = "Let's play!";
-        collapseRules("Let's play!")
-        playerScore = 0;
-        let myScore = document.getElementById('score');
-        myScore.innerHTML = ``;
-        previousCountry = [];
-        currentCountry;
-        questionNumber = 1;
-        bonusPointScore = 0;
-    }
-}
 
 /*Function to check answer & increment score*/
 function answerQuestion(playerChoice) {
