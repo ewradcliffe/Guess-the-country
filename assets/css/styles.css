@@ -1,5 +1,5 @@
 /*Font from Google fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 /*Basic styling*/
 body {
@@ -14,18 +14,23 @@ body {
     text-align: center;
 }
 
-/*Header and rules*/
+/*Header*/
 header {
     border-bottom: 2px solid blue;
 }
-
-header > h1 {
+/*logo*/
+#logo {
+    font-family: "Beau Rivage", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 300%;
     margin: 0%;
     padding: 2%;
     color: white;
     background: blue;
 }
 
+/*Rules*/
 header > ul {
     padding: 0;
 }
@@ -105,6 +110,11 @@ header > ul > li {
 /* Media Queries*/
 /*Tablets and up (768px+)*/
 @media screen and (min-width: 768px) {
+    /*logo*/
+    #logo {
+        font-size: 400%;
+    }
+    
     /*Rules*/
     header > ul > li {
         font-size: 150%;
@@ -128,7 +138,12 @@ header > ul > li {
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-
+    /*Header*/
+    #logo {
+        padding: 0%;
+        margin: 0%;
+    }
+    
     header > ul > li {
         padding: 0.5%;
     }
