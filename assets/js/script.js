@@ -15,8 +15,6 @@ function checkGameLength() {
         let changeButtonText = document.getElementById('show-me-a-country');
         changeButtonText.innerHTML = "Let's play!";
         collapseRules("Let's play!")
-        let hideMap = document.getElementById('country-map');
-        hideMap.innerHTML = ``;
         playerScore = 0;
         let myScore = document.getElementById('score');
         myScore.innerHTML = ``;
@@ -40,8 +38,6 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
-    console.log(`question number ${questionNumber}`);
-
 }
 
 /*Function to collapse rules*/
@@ -92,8 +88,10 @@ function displayButtons(currentCountry) {
 
 /*Function to display country map */
 function displayCountry() {
+    let showMap = document.getElementById('country-map');
     if (questionNumber > 20) {
         checkGameLength()
+        showMap.innerHTML = ``;
     } else {
         /*Calls Question number & change button text function*/
         questionNumTrack()
@@ -108,7 +106,6 @@ function displayCountry() {
         previousCountry.push(currentCountry);
 
         /*Displays the Map Silhouette*/
-        let showMap = document.getElementById('country-map');
         showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
 
         displayButtons(currentCountry);
