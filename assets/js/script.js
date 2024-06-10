@@ -21,6 +21,9 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
+    if (questionNumber > 21) {
+        checkGameLength()
+    }
 }
 /*Function to collapse rules*/
 function collapseRules(buttonText) {
