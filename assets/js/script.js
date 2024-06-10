@@ -21,6 +21,7 @@ function questionNumTrack() {
     qNum = document.getElementById('question-number');
     qNum.innerHTML = `<h2>Question ${questionNumber}</h2>`;
     ++questionNumber;
+    /*Prevent show me another question being used to take more than 20 turns.*/
     if (questionNumber > 21) {
         checkGameLength()
     }
