@@ -18,6 +18,7 @@ body {
 header {
     border-bottom: 2px solid rgb(14, 14, 99);
 }
+
 /*logo*/
 #logo {
     font-family: "Beau Rivage", cursive;
@@ -32,11 +33,11 @@ header {
 }
 
 /*Rules*/
-header > ul {
+header>ul {
     padding: 0;
 }
 
-header > ul > li {
+header>ul>li {
     list-style-type: none;
     padding: 2%;
 }
@@ -48,7 +49,7 @@ header > ul > li {
     font-size: 200%;
 }
 
-#score-area > p {
+#score-area>p {
     margin: 2%;
 }
 
@@ -69,7 +70,7 @@ header > ul > li {
 }
 
 /*Question count area*/
-#question-number > h2 {
+#question-number>h2 {
     margin: 2%;
 }
 
@@ -85,18 +86,18 @@ header > ul > li {
 }
 
 /*display's country player selected*/
- #player-choice {
+#player-choice {
     font-size: 200%;
     display: flex;
     justify-content: center;
- }
+}
 
 /*Tick and cross icons*/
- .fa-solid {
+.fa-solid {
     font-size: 300%;
- }
+}
 
- /*Text which appears when bonus points awarded*/
+/*Text which appears when bonus points awarded*/
 #bonus-points {
     color: green;
     font-size: 150%
@@ -111,13 +112,14 @@ header > ul > li {
 /* Media Queries*/
 /*Tablets and up (768px+)*/
 @media screen and (min-width: 768px) {
+
     /*logo*/
     #logo {
         font-size: 400%;
     }
-    
+
     /*Rules*/
-    header > ul > li {
+    header>ul>li {
         font-size: 150%;
         padding: 1%;
     }
@@ -126,37 +128,38 @@ header > ul > li {
     #question-number {
         font-size: 150%;
     }
-    
+
     /*Buttons*/
-    #country-map > div {
-        columns: 2; 
+    #country-map>div {
+        columns: 2;
     }
 
-    .answer-button{
-        margin: 5%;       
+    .answer-button {
+        margin: 5%;
     }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+
     /*Header*/
     #logo {
         padding: 0%;
         margin: 0%;
     }
-    
-    header > ul > li {
+
+    header>ul>li {
         padding: 0.5%;
     }
 
     /*Question count area*/
-    #question-number > h2 {
+    #question-number>h2 {
         margin: 0%;
         font-size: 100%;
     }
 
     /*Buttons*/
-    #country-map > div {
-        columns: 4; 
+    #country-map>div {
+        columns: 4;
     }
 }

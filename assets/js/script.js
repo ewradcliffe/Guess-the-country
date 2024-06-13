@@ -10,11 +10,11 @@ let bonusPointScore = 0;
 /*Function to check game length. Ends after 20 goes*/
 function checkGameLength() {
     if (questionNumber > 20) {
-        qNum.innerHTML = `<h2 class = "game-over">Game over!</h2><p class = "game-over">You got ${playerScore} points!</p>`
+        qNum.innerHTML = `<h2 class = "game-over">Game over!</h2><p class = "game-over">You got ${playerScore} points!</p>`;
         /*Resets scores and variables & game button text.*/
         let changeButtonText = document.getElementById('show-me-a-country');
         changeButtonText.innerHTML = "Let's play!";
-        collapseRules("Let's play!")
+        collapseRules("Let's play!");
         playerScore = 0;
         let myScore = document.getElementById('score');
         myScore.innerHTML = ``;
@@ -90,12 +90,12 @@ function displayButtons(currentCountry) {
 function displayCountry() {
     let showMap = document.getElementById('country-map');
     if (questionNumber > 20) {
-        checkGameLength()
+        checkGameLength();
         showMap.innerHTML = ``;
     } else {
         /*Calls Question number & change button text function*/
-        questionNumTrack()
-        changeButton()
+        questionNumTrack();
+        changeButton();
         /*Randomly selects a country*/
         currentCountry = randomiseCountry();
 
@@ -107,7 +107,6 @@ function displayCountry() {
 
         /*Displays the Map Silhouette*/
         showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
-
         displayButtons(currentCountry);
     }
 }
@@ -128,7 +127,6 @@ function bonusPoints(bonus) {
     }
 }
 
-
 /*Function to check answer & increment score*/
 function answerQuestion(playerChoice) {
     let questionResult = document.getElementById('country-map');
@@ -145,7 +143,7 @@ function answerQuestion(playerChoice) {
     let myScore = document.getElementById('score');
     myScore.innerHTML = `${playerScore}`;
     /*Function which checks if 20 turns taken.*/
-    checkGameLength()
+    checkGameLength();
 }
 
 /*Event Listener to display map and option buttons*/
