@@ -16,18 +16,19 @@ body {
 
 /*Header*/
 header {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid rgb(14, 14, 99);
 }
 /*logo*/
 #logo {
     font-family: "Beau Rivage", cursive;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     font-size: 300%;
+    text-shadow: 2px 2px black;
     margin: 0%;
     padding: 2%;
     color: white;
-    background: blue;
+    background-image: url('../images/worldmap.jpg');
 }
 
 /*Rules*/
@@ -54,7 +55,7 @@ header > ul > li {
 #score {
     width: 40px;
     height: 40px;
-    border: 2px solid blue;
+    border: 2px solid rgb(14, 14, 99);
 }
 
 /*Show me a country button*/
