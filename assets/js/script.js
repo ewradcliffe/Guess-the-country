@@ -1,5 +1,6 @@
 /*list of countries to choose from*/
 const countries = ['Austria', 'Belgium', 'Bulgaria', 'Cyprus', 'Denmark', 'France', 'Germany', 'Greece', 'Greenland', 'Hungary', 'India', 'Indonesia', 'Italy', 'Ireland', 'Japan', 'Jordan', 'Kosovo', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malaysia', 'Mexico', 'Mongolia', 'Mozambique', 'Myanmar', 'Nepal', 'Netherlands', 'Norway', 'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Singapore', 'Slovenia', 'Somalia', 'Spain', 'Sudan', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Ukraine', 'Uganda', 'USA', 'UK', 'Venezuela', 'Vietnam', 'Zambia', 'Zimbabwe'];
+const askMeAQuestion = document.getElementById('show-me-a-country');
 let previousCountry = [];
 let currentCountry;
 let qNum;
@@ -19,7 +20,7 @@ function checkGameLength() {
         let myScore = document.getElementById('score');
         myScore.innerHTML = ``;
         previousCountry = [];
-        currentCountry;
+        currentCountry ='';
         questionNumber = 1;
         bonusPointScore = 0;
     }
@@ -49,6 +50,7 @@ function collapseRules(buttonText) {
         hideRules.style.display = "block";
     }
 }
+
 /*Function to change text of "let's play" button*/
 function changeButton() {
     let changeButtonText = document.getElementById('show-me-a-country');
@@ -78,10 +80,11 @@ function displayButtons(currentCountry) {
      */
     let buttonArea = document.createElement('div');
     for (let choice in countryButtons) {
+      if (countryButtons.hasOwnProperty(choice)) {
         let questionChoice = document.createElement('div');
         questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
         buttonArea.appendChild(questionChoice);
-    }
+    }}
     let showMap = document.getElementById('country-map');
     showMap.appendChild(buttonArea);
 }
@@ -147,5 +150,4 @@ function answerQuestion(playerChoice) {
 }
 
 /*Event Listener to display map and option buttons*/
-let askMeAQuestion = document.getElementById('show-me-a-country');
 askMeAQuestion.addEventListener('click', displayCountry);
