@@ -20,7 +20,7 @@ function checkGameLength() {
         let myScore = document.getElementById('score');
         myScore.innerHTML = ``;
         previousCountry = [];
-        currentCountry ='';
+        currentCountry = '';
         questionNumber = 1;
         bonusPointScore = 0;
     }
@@ -85,11 +85,12 @@ function displayButtons(currentCountry) {
      */
     let buttonArea = document.createElement('div');
     for (let choice in countryButtons) {
-      if (countryButtons.hasOwnProperty(choice)) {
-        let questionChoice = document.createElement('div');
-        questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
-        buttonArea.appendChild(questionChoice);
-    }}
+        if (countryButtons.hasOwnProperty(choice)) {
+            let questionChoice = document.createElement('div');
+            questionChoice.innerHTML = `<button id ="${countryButtons[choice]}" onclick = "answerQuestion(this.id)" class = "answer-button">${countryButtons[choice]}</button>`;
+            buttonArea.appendChild(questionChoice);
+        }
+    }
     let showMap = document.getElementById('country-map');
     showMap.appendChild(buttonArea);
 }
@@ -97,25 +98,29 @@ function displayButtons(currentCountry) {
 /*Function to display country map */
 function displayCountry() {
     let showMap = document.getElementById('country-map');
-    if (questionNumber > 20) {
-        checkGameLength();
-        showMap.innerHTML = ``;
-    } else {
-        /*Calls Question number & change button text function*/
-        questionNumTrack();
-        changeButton();
-        /*Randomly selects a country*/
-        currentCountry = randomiseCountry();
-
-        /*Checks country hasn't been selected already*/
-        while (previousCountry.includes(currentCountry)) {
+    try {
+        if (questionNumber > 20) {
+            checkGameLength();
+            showMap.innerHTML = ``;
+        } else {
+            /*Calls Question number & change button text function*/
+            questionNumTrack();
+            changeButton();
+            /*Randomly selects a country*/
             currentCountry = randomiseCountry();
-        }
-        previousCountry.push(currentCountry);
 
-        /*Displays the Map Silhouette*/
-        showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
-        displayButtons(currentCountry);
+            /*Checks country hasn't been selected already*/
+            while (previousCountry.includes(currentCountry)) {
+                currentCountry = randomiseCountry();
+            }
+            previousCountry.push(currentCountry);
+
+            /*Displays the Map Silhouette*/
+            showMap.innerHTML = `<img src = "assets/images/${currentCountry.toLowerCase()}.png" alt = "Silhouette of country.">`;
+            displayButtons(currentCountry);
+        }
+    } catch (err) {
+        showMap.innerHTML = "Error. Please refresh the page."
     }
 }
 
