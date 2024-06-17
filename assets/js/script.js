@@ -41,13 +41,18 @@ function questionNumTrack() {
     ++questionNumber;
 }
 
-/*Function to collapse rules*/
+/*Function to collapse rules and display score*/
 function collapseRules(buttonText) {
     let hideRules = document.getElementById('rules');
+    let scoreArea = document.getElementById('score-area');
     if (buttonText === "Show me another country!") {
         hideRules.style.display = "none";
+        scoreArea.style.display = "flex";
+        scoreArea.innerHTML = "<p>score</p><p id='score'></p>";
     } else {
         hideRules.style.display = "block";
+        scoreArea.style.display = "none";
+
     }
 }
 

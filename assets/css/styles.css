@@ -49,7 +49,6 @@ header>ul>li {
 
 /*Score area*/
 #score-area {
-    display: flex;
     justify-content: center;
     font-size: 200%;
 }
