@@ -48,11 +48,10 @@ function collapseRules(buttonText) {
     if (buttonText === "Show me another country!") {
         hideRules.style.display = "none";
         scoreArea.style.display = "flex";
-        scoreArea.innerHTML = "<p>score</p><p id='score'></p>";
+        scoreArea.innerHTML = `<p>score</p><p id='score'>${playerScore}</p>`;
     } else {
         hideRules.style.display = "block";
         scoreArea.style.display = "none";
-
     }
 }
 
