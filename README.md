@@ -9,8 +9,11 @@ The quiz will focus on asking questions related to country sillouttes. This focu
 The quiz will be on a single page for simplicity. I will try and structure it to minimise scrolling. I will prioritise mobile design as I expect most users to use it to pass time while on the go. A silloutte of the country will be displayed to the user. Appropriately titled buttons will allow the user to interact with the quiz in an intuative and tactile way. I will use buttons as this will support users with touchscreens and prevent issues with people entring correct, but icorrectly spelled answers.
 
 ## Skeleton
-Wireframe
+#### Wireframe
+I drafted the below wireframes for the appearence of the site. Note that the view is slightly different from the finished version. After some testing I swapped the answer buttons and 'show me another country buttons' around to show the answer buttons first. The reasons are fully explained in the testing section below, but the change improvesuser experience.
 
+![Wireframe of the mobile site.](assets/images/mobilewireframe.jpeg)
+![Wireframe of the full screen site](assets/images/fullscreenwireframe.jpeg)
 ## Surface
 I will keep the appearence of the quiz simple, with bold colours. When the user answers a question I will provide feedback in with a green tick or a red cross to support intuative interaction. 
 
