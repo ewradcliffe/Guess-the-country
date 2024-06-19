@@ -16,16 +16,16 @@ I will keep the appearence of the quiz simple, with bold colours. When the user 
 
 ## The final site
 This is the initial view of the final site on mobile. <br />
-![Screenshot of view one of the mobile site.](assets/images/screenshotsmallone.png)
+![Screenshot of view one of the mobile site.](assets/images/mobileviewone.png)
 
 This is the view of the above once the 'let's play button' is clicked. <br />
-![Screenshot of view two of the mobile site.](assets/images/screenshotsmalltwo.png)
+![Screenshot of view two of the mobile site.](assets/images/mobileviewtwo.png)
 
 This is the initial view on a large screen.
-![Screenshot of view one of the large screen site.](assets/images/screenshotlargeone.png)
+![Screenshot of view one of the large screen site.](assets/images/fullscreenviewone.png)
 
 This is the view of the above when the 'let's play' button is clicked.
-![Screenshot of view two of the large screen site.](assets/images/screenshotlargetwo.png)
+![Screenshot of view two of the large screen site.](assets/images/fullscreenviewtwo.png)
 
 ### Testing
 #### Manual user testing
