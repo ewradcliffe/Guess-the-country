@@ -119,7 +119,7 @@ function displayCountry() {
             displayButtons(currentCountry);
         }
     } catch (err) {
-        showMap.innerHTML = "Error. Please refresh the page."
+        showMap.innerHTML = "Error. Please refresh the page.";
     }
 }
 
