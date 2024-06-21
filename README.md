@@ -39,6 +39,8 @@ This is the view of the above when the 'let's play' button is clicked.
 
 ### Testing
 #### Manual user testing
+The site was tested throughout development to ensure basic functionality. Several major bugs were detected which are detailed below. 
+
 A bug was found whereby the "Show me another country" button would increment the score, but not trigger the function ending the game after 20 turns. This allowed players on the 20th question to click the button multiple times and be re-asked the question, meaning they could wait until a question they could answer came up. This could lead to crashing the game if the player clicked the button until all maps had been displayed, and also makes the programme seem incomplete. I corrected this by adding code to automatically end the game once the question tracker reached 21.
 
 In the earlier versions of the site, the answer select buttons appeared at the bottom of the page. This meant that on some screens some or all of the buttons were cut off at the bottom, necessitating scrolling. In the worst cases the third or fourth button (which had the correct answer) was cut off. This caused confusion as it was not obvious the user needed to scroll. Some restyling of padding and margins helped, however shrinking the size of the elements too much would also decrease user experience. In the end, I created space by moving the 'Show me another country' to the bottom, as it is less important when the answer select buttons are visible.
