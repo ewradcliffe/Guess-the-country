@@ -20,7 +20,7 @@ I drafted the below wireframes for the appearance of the site. Note that the vie
 ![Wireframe of the mobile site.](assets/images/mobilewireframe.jpeg)
 ![Wireframe of the full screen site](assets/images/fullscreenwireframe.jpeg)
 ## Surface
-To build a strong identity and maximise user experience I have chosen a simple yet striking design. A deep blue header with a white cursive font contrasting with a white background with blue and black design and a sans-serif font in the body. A background image of the globe at night was used to support the identity of a geography quiz, whilst a plain background was used in the main body for clarity and not to distract from the quiz itself.
+To build a strong identity and maximise user experience I have chosen a simple yet striking design. A deep blue header with a white cursive font contrasting with a white background with blue and black design and a sans-serif font in the body. A background image of the globe at night was used to support the identity of a geography quiz, whilst a plain background was used in the main body for clarity and not to distract from the quiz itself. The eyedropper tool was used to match any blue used in the body with the background image in the heading.
 
 Intuitive result feedback is supported by green or red colouring and the use of tick or cross icons.
 
